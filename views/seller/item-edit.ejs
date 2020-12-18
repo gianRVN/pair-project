@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidding App</title>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+    <h1>Form Edit Item</h1>
+    <form action="/items/edit/<%= item.id %>" method="POST">
+        <label>Name</label><br>
+        <input type="text" name="name" value="<%= item.name %>" >
+        <br>
+        <label>Price</label><br>
+        <input type="text" name="price" value="<%= item.price %>" >
+        <br>
+        <label>Type</label><br>
+        <input type="integer" name="type" value="<%= item.type %>" >
+        <br>
+        <label>Kelengkapan Barang</label><br>
+        <input type="text" name="kelengkapan_barang" value="<%= item.kelengkapan_barang %>">
+        <br>
+        <label>Keterangan Barang</label><br>
+        <input type="text" name="keterangan_barang" value="<%= item.keterangan_barang %>" >
+        <br>
+        <label>Status</label><br>
+        <select name="status" id="status">
+            <option value="true">Avaliable</option>
+            <option value="false">Unavailable</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

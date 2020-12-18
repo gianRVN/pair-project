@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidding App</title>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+    <h1>Item List</h1>
+        <a href="/items/add">Add New</a>
+    <table border="2">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Birth Year</th>
+            <th>Action</th>
+        </tr>
+            <% data.map(e => { %>
+        <tr>
+            <td><%= e.id %></td>
+            <td><%= e.name %></td>
+            <td><%= exchange(e.price) %></td>
+            <td><%= e.type %></td>
+            <td>
+                <a href="/items/delete/<%= e.id%>" onclick="clicked(even)" >Delete</a> |
+                <a href="/items/edit/<%= e.id%>"  >Update</a> |
+                <a href="/items/disabled/<%= e.id%>" >Disabled</a>
+            </td>
+        </tr>
+    <% }) %>
+    </table>
+
+    <script>
+        function clicked(e)
+        {
+            if(!confirm('Are you sure?')) {
+                e.preventDefault();
+            }
+        }
+        </script>
+</body>
+</html>

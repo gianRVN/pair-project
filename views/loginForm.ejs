@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+    input[type = submit] {
+        background-color: blue;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: medium;     
+    }
+
+    a.canceling:link, a.canceling:visited, a.canceling:hover, a.canceling:active {
+        background-color:green;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: medium
+    }
+</style>
+
+<body>
+    <div>
+        <%- include('./partials/navbar') %>
+    </div>
+    <div style="margin-left: 15%; margin-right: 15%;">
+    <h1> Log In </h1>
+    <br>
+        <form action="/login" method="POST">
+            <div>
+                <label for="username">Username</label><br>
+                <input type="username" name="username" id="username">
+            </div>
+            <br>
+            <div>
+                <label for="password">Password</label><br>
+                <input type="password" name="password" id="password">
+            </div>
+            <br>
+                <input type="submit" value="login"> <a class="canceling" href="/register">Register</a>
+        </form>
+    </div>
+</body>
+</html>

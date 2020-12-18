@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Add Movie</title>
+</head>
+<style>
+    input[type = submit] {
+        background-color: blue;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: medium;     
+    }
+
+    a.canceling:link, a.canceling:visited, a.canceling:hover, a.canceling:active {
+        background-color:red;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: medium
+    }
+</style>
+<body>
+    <div>
+     <%- include('./partials/navbar') %>
+    </div>
+     <div style="margin-left: 15%; margin-right: 15%;">
+    <h1> <%= data.name %> </h1>
+        <p>Name         : <%= data.name %></p>
+        <p>Price        : <%= formatRupiah(data.price) %></p>
+        <p>Type         : <%= data.type %></p>
+        <p>Kelengkapan  : <%= data.kelengkapan_barang %></p>
+        <p>Keterangan   : <%= data.keterangan_barang %></p>
+    <br><br>
+    <form action="/itemlist/<%=data.id%>" method="POST">
+        <div>
+            <label for="price">Ajukan Penawaran Harga</label><br>
+            <input type="number" name="price" id="price">
+        </div>
+        <br>
+            <input type="submit" value="Ajukan">
+    </form>
+</div>
+</body>
+</html>
